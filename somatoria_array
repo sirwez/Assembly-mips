@@ -1,0 +1,39 @@
+.data 
+	ArrayC: .space 10
+	resu: .asciiz "A Somatoria é: "
+	digite: .asciiz "Digite o numero do array: "
+.text
+	la $t0, ArrayC
+	add $t1, $zero, $zero
+	add $t2, $zero, $zero
+	li $t3,10
+	
+	li $v0,4
+	la $a0,digite
+	syscall
+	
+Pegar:	li $v0,5
+	syscall
+	
+	add $t2,$t2,$v0
+	sw $v0, ($t0)
+	
+	addi $t0, $t0, 4
+	addi $t1, $t1, 1
+	
+	beq $t1,$t3,Sair
+	
+	j Pegar
+	
+Sair:	li $v0,4
+	la $a0,resu
+	syscall
+	
+	li $v0,1
+	move $a0,$t2
+	syscall
+	
+	li $v0,10
+	syscall
+	
+	
