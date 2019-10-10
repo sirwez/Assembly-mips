@@ -60,10 +60,6 @@ main:
 
 fatorial:
 
-    # base case -- still in parent's stack segment
-
-    # adjust stack pointer to store return address and argument
-
     addi    $sp, $sp, -8
 
     # save $s0 and $ra
