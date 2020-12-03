@@ -50,7 +50,7 @@ bne $t6, $zero, men
    
    sai:
    
-    divu $s1, $s2, $t0 #executa a divis„o entre s2 e s3
+    divu $s1, $s2, $t0 #executa a divis√£o entre s2 e s3
     
     		li $v0,1
 	        move $a0,$s1
